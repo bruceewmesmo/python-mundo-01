@@ -8,21 +8,94 @@ Created on Mon Apr 12 14:55:57 2021
 # LIBS
 import math
 import random
+import time
 import pygame
 
-# EXERCICIO 029 - 
-# EXERCICIO 028 - 
-# EXERCICIO 027 - 
-# EXERCICIO 026 - 
-# EXERCICIO 025 - 
-# EXERCICIO 024 - 
-# EXERCICIO 023 - 
-# EXERCICIO 022 - 
+# EXERCICIO 035 - ANALISANDO TRIANGULO
+# EXERCICIO 034 - AUMENTOS MULTIPLOS
+# EXERCICIO 033 - MAIOR E MENOR VALORES
+# EXERCICIO 032 - ANO BISSEXTO
 
+
+# EXERCICIO 031 - CUSTO DA VIAGEM
+dist = float(input('Qual a distância da sua viagem? '))
+preco = dist * 0.50  if dist <= 200 else dist * 0.45
+print('O preço da sua pasagem vai ser R${:.2f}'.format(preco))
+
+# EXERCICIO 030 - PAR OU IMPAR
+n = int(input('Digite um número: '))
+if (n%2) == 0:
+    print('Seu número é PAR')
+else:
+    print('Seu número é IMPAR')
+
+
+# EXERCICIO 029 - RADAR ELETRONICO
+v = float(input('Qual a velocidade do carro? '))
+if v > 80:
+    print('Teje multado! Você excedeu o limite de 80km/h')
+    multa = (v - 80)*7
+    print('Sua multa custará R${:.2f}'.format(multa))
+print('Tenha um bom dia! Dirija com segurança')
+
+
+# EXERCICIO 028 - JOGO DA ADIVINHACAO
+n = random.randint(0, 5)
+print('Tente advinhar o número que eu escolhi de 0 a 5.')
+tentativa = int(input('Em que número eu pensei? '))
+if n == tentativa:
+    print('Parabéns voce acertou!')
+else:
+    print('Eu pensei no número {} e não no {}'.format(n, tentativa))
+
+
+# EXERCICIO 027 -  PRIMEIRO E ULTIMO NOME DE UMA PESSOA
+nome = str(input('Qual seu nome completo?')).strip()
+nomeSeparado = nome.split()
+print('Prazer em te conhecer! {}'.format(nome))
+print('Seu primeiro nome é {}'.format(nomeSeparado[0]))
+print('Seu último nome é {}'.format(nomeSeparado[len(nomeSeparado)-1]))
+
+
+# EXERCICIO 026 - PRIMEIRA E ULTIMA OCORRENCIA DE UMA STRING
+frase = str(input('Digite uma frase: ')).upper().strip()
+print('A letra A aparece {} vezes'.format(frase.count('A')))
+print('A primeira letra A aparece na posição {}'.format(frase.find('A')+1))
+print('A última  letra A aparece na posição {}'.format(frase.rfind('A')+1))
+
+
+# EXERCICIO 025 - PROCURANDO UMA STRING EM OUTRA STRING
+nome = str(input('Qual seu nome?')).strip()
+print('Seu nome tem Silva? {}'.format('SILVA' in nome.upper()))
+
+
+# EXERCICIO 024 - VERIFICANDO AS PRIMEIRAS LETRAS
+cid = str(input('Onde você nasceu? ')).strip()
+print(cid[:5].upper() == 'SANTO')
+
+
+# EXERCICIO 023 - SEPARANDO DIGITOS DE UM NÚMERO
+n = int(input('Digite um número: '))
+u = n // 1 % 10
+d = n // 10 % 10
+c = n // 100 % 10
+m = n // 1000 % 10
+print('Analisando o número {}'.format(n))
+print('Unidade: {}'.format(u))
+print('Dezena: {}'.format(d))
+print('Centena: {}'.format(c))
+print('Milhar: {}'.format(m))
+
+
+# EXERCICIO 022 - ANALISADOR DE TEXTOS
+nome = str(input('Digite seu nome completo: ')).strip()
+print(nome.upper())
+print(nome.lower())
+print('Seu nome possui {} letras'.format(len(nome)-nome.count(' ')))
 
 
 # EXERCICIO 021 - TOCAR DE MP3
-pygame.mixer.music.load('C:\Users\Home\Desktop\Projetos\Camila Campanha\go_no_go\beep_sound.mp3')
+pygame.mixer.music.load()
 pygame.mixer.music.play()
 pygame.event.wait()
 
