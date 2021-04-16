@@ -10,17 +10,60 @@ import math
 import random
 import time
 import pygame
+import datetime
 
 # EXERCICIO 035 - ANALISANDO TRIANGULO
+r1 = float(input('Digite o tamanho da primera reta:'))
+r2 = float(input('Digite o tamanho da segunda reta:'))
+r3 = float(input('Digite o tamanho da terceira reta:'))
+if r1 < r2 + r3 and r2 < r1 + r3 and r3 < r1 + r2:
+    print('É possível formar um triangulo com essas retas')
+else:
+    print('Não é possível formar um triangulo com essas retas')
+
+
 # EXERCICIO 034 - AUMENTOS MULTIPLOS
+s = float(input('Digite o salário: '))
+if s > 1250:
+    novo = s * 1.1
+else:
+    novo = s * 1.15
+print('Um salário de R${:.2f} passa a ganhar R${:.2f}'.format(s,novo))
+
+
 # EXERCICIO 033 - MAIOR E MENOR VALORES
+n1 = int(input('Digite um número: '))
+n2 = int(input('Digite um número: '))
+n3 = int(input('Digite um número: '))
+menor = n1
+if n3<n1 and n2<n3:
+    menor = n2
+if n3<n1 and n3<n2:
+    menor = n3
+maior = n1   
+if n3 > n1 and n2 > n3:
+    maior = n2
+if n3 > n1 and n3 > n2:
+    maior = n3
+print('O menor valor é {}'.format(menor))
+print('O maior valor é {}'.format(maior))
+
+
 # EXERCICIO 032 - ANO BISSEXTO
+ano = int(input('Digite um ano ou aperte zero para este ano: '))
+if ano == 0:
+    ano = datetime.date.today().year()
+if ano % 4 == 0 and ano % 100 != 0 or ano % 400 == 0:
+    print('O ano é bissexto')
+else:
+    print('O ano não é bissexto')
 
 
 # EXERCICIO 031 - CUSTO DA VIAGEM
 dist = float(input('Qual a distância da sua viagem? '))
 preco = dist * 0.50  if dist <= 200 else dist * 0.45
 print('O preço da sua pasagem vai ser R${:.2f}'.format(preco))
+
 
 # EXERCICIO 030 - PAR OU IMPAR
 n = int(input('Digite um número: '))
